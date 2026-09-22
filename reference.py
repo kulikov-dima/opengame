@@ -60,7 +60,8 @@ def load_platforms() -> list[Platform]:
     logger.debug(f"Прочитано {len(platforms)} платформ")
     return platforms
 
-# def find_tag(user_input: str, tags: list[Tag]) -> Tag:
+
+
 
 
 
