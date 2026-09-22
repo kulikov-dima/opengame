@@ -38,7 +38,6 @@ class StopGameClient:
             "p": page,
         }
         html = self._get("/games/catalog", params).text
-        time.sleep(self.pause)
         return html
 
     def _get(self, url: str, params: dict | None = None):
