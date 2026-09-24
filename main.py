@@ -5,7 +5,7 @@ from client import StopGameClient
 from reference import save_platforms, save_tags, load_tags, load_platforms
 import difflib
 from bs4 import BeautifulSoup
-
+from models import Game
 from logging_config import BASIC_CONFIG
 
 logger = logging.getLogger(__name__)
@@ -111,12 +111,16 @@ def cmd_games(args):
 
     client = StopGameClient()
     page = client.fetch_catalog_page(tag_slugs=tag_slugs, platform_codes=platform_codes)
-    soup = BeautifulSoup(page, "html.parser")
-    # print(soup.prettify())
-    links = soup.find_all("a")
-    game_links = list(filter(lambda l: l.has_attr("data-game-card"), links))
-    game_hrefs = list(map(lambda l: l.attrs["href"], game_links))
-    print(game_hrefs)
+    links = client.extract_game_hrefs(page)
+    games_result = []
+    for link in links:
+        game_page = client.fetch_game_page(link)
+        game = client.parse_game_page(game_page, link)
+        games_result.append(game)
+    print(games_result)
+
+
+
 
 
 

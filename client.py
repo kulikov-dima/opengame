@@ -1,5 +1,6 @@
+from bs4 import BeautifulSoup
 import time
-
+from models import Game
 import requests
 import logging
 
@@ -39,6 +40,29 @@ class StopGameClient:
         }
         html = self._get("/games/catalog", params).text
         return html
+
+    def fetch_game_page(self, url) -> str:
+        html = self._get(url).text
+        return html
+
+    @staticmethod
+    def extract_game_hrefs(html: str) -> list[str]:
+        soup = BeautifulSoup(html, "html.parser")
+        links = soup.find_all("a")
+
+        game_links = list(filter(lambda l: l.has_attr("data-game-card"), links))
+        game_hrefs = list(map(lambda l: l.attrs["href"], game_links))
+        return game_hrefs
+
+    @staticmethod
+    def parse_game_page(html, url) -> Game:
+        soup = BeautifulSoup(html, "html.parser")
+        title = soup.find("h1", class_="_game-title_1bso0_702").text
+        rating = soup.find("span", class_="_game-rating_1bso0_165")
+        if rating:
+            rating = rating.text
+        year = soup.find("dd").text
+        return Game(url=url, name=title, year=year, rating=rating)
 
     def _get(self, url: str, params: dict | None = None):
         logger.debug(f"GET {url=} {params=}")

@@ -26,3 +26,8 @@ class Platform:
         names = [self.code, self.title]
         names = [name.strip().lower() for name in names]
         return user_input in names
+
+if __name__ == "__main__":
+    from dataclasses import asdict
+    g = Game(1,2,3,4)
+    print(asdict(g))
