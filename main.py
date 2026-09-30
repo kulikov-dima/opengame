@@ -1,5 +1,7 @@
 import argparse
 import logging
+import os.path
+
 import reference
 from client import StopGameClient
 from reference import save_platforms, save_tags, load_tags, load_platforms
@@ -7,8 +9,12 @@ import difflib
 from bs4 import BeautifulSoup
 from models import Game
 from logging_config import BASIC_CONFIG
+import csv
+from dataclasses import asdict, fields
 
 logger = logging.getLogger(__name__)
+
+OUT_DIR = "out"
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -112,12 +118,20 @@ def cmd_games(args):
     client = StopGameClient()
     page = client.fetch_catalog_page(tag_slugs=tag_slugs, platform_codes=platform_codes)
     links = client.extract_game_hrefs(page)
-    games_result = []
+    games_result: list[Game] = []
     for link in links:
         game_page = client.fetch_game_page(link)
         game = client.parse_game_page(game_page, link)
         games_result.append(game)
-    print(games_result)
+    # TODO: refactor to a function or method
+    if not os.path.exists(OUT_DIR):
+        os.makedirs(OUT_DIR)
+
+    with open(os.path.join(OUT_DIR, args.out), "w",newline="",encoding="utf-8") as f:
+        logger.info("Пишу файл %s", args.out)
+        writer = csv.DictWriter(f, fieldnames=[f.name for f in fields(Game)])
+        writer.writeheader()
+        writer.writerows(map(asdict, games_result))
 
 
 
