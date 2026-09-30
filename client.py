@@ -34,7 +34,6 @@ class StopGameClient:
     def fetch_catalog_page(self, tag_slugs: list[str],
                            platform_codes: list[str], page: int = 1) -> str:
         logger.info("Гружу страницу каталог")
-        logger.debug("{} {}", tag_slugs, platform_codes)
         params = {
             "genre[]": tag_slugs,
             "platform[]": platform_codes,
@@ -55,7 +54,7 @@ class StopGameClient:
 
         game_links = list(filter(lambda l: l.has_attr("data-game-card"), links))
         game_hrefs = list(map(lambda l: l.attrs["href"], game_links))
-        logger.debug("Found {} links", len(game_hrefs))
+        logger.debug("Found %d links", len(game_hrefs))
         return game_hrefs
 
     @staticmethod
@@ -70,7 +69,7 @@ class StopGameClient:
 
     def _get(self, url: str, params: dict | None = None):
         logger.debug(f"GET {url=} {params=}")
-        logger.info(f"Вежливо жду {self.delay}с.")
+        logger.debug(f"Вежливо жду {self.delay}с.")
         time.sleep(self.delay)
         response = requests.get(
             self.base_url + url,
