@@ -7,6 +7,8 @@ import difflib
 from bs4 import BeautifulSoup
 from models import Game
 from logging_config import BASIC_CONFIG
+import csv
+from dataclasses import asdict, fields
 
 logger = logging.getLogger(__name__)
 
@@ -112,12 +114,20 @@ def cmd_games(args):
     client = StopGameClient()
     page = client.fetch_catalog_page(tag_slugs=tag_slugs, platform_codes=platform_codes)
     links = client.extract_game_hrefs(page)
-    games_result = []
+    games_result: list[Game] = []
     for link in links:
         game_page = client.fetch_game_page(link)
         game = client.parse_game_page(game_page, link)
         games_result.append(game)
+    # TODO: refactor to a function or method
     print(games_result)
+    print(fields(Game))
+    print(*map(asdict, games_result))
+    with open(args.out, "w",newline="",encoding="utf-8") as f:
+        logger.info("Пишу файл %s", args.out)
+        writer = csv.DictWriter(f, fieldnames=[f.name for f in fields(Game)])
+        writer.writeheader()
+        writer.writerows(map(asdict, games_result))
 
 
 
