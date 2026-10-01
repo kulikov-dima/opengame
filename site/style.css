@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #0f172a;
+}
+
+header, main, footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+form {
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+}
+
+form p {
+    background: #fceefb;
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #8300bc;
+    color: white;
+    cursor: pointer;
+}
+
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { padding: 8px 12px; border-bottom: 1px solid #ddd; text-align: left; }
+th { background: #8300bc; color: white; }
+tbody tr:nth-child(even) { background: #f5f0fa; }
+
+.cards { display: flex; flex-wrap: wrap; gap: 16px; }
+.game-card {
+    flex: 1 1 250px;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+}

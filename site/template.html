@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Каталог игр</title>
+</head>
+<body>
+    <header>
+        <h1>OpenGame</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Фильтры</h2>
+            <form action="" method="GET">
+                <p>
+                    <label for="query">Название:</label>
+                    <input id="query" name="query" type="search" placeholder="Например, witcher">
+                </p>
+                <p>
+                    <label for="platform">Платформа:</label>
+                    <select id="platform" name="platform">
+                        <option value="any">Любая</option>
+                        <option value="pc">PC</option>
+                        <option value="ps4">PS4</option>
+                        <option value="ns">Nintendo Switch</option>
+                        <option value="gba">GameBoy Advance</option>
+                    </select>
+                </p>
+                <p>
+                    Жанры:<br>
+                    <label><input type="checkbox" value="rpg" name="genre"> RPG</label>
+                    <label><input type="checkbox" value="strategy" name="genre"> Стратегия</label>
+                    <label><input type="checkbox" value="racing" name="genre"> Гонки</label>
+                </p>
+                <p>
+                    <button type="submit">Применить</button>
+                </p>
+
+            </form>
+        </section>
+
+        <section>
+            <h2>Игры</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ссылка</th><th>Название</th><th>Дата выхода</th>
+                        <th>Рейтинг</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ROWS}}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>
