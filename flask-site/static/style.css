@@ -1,0 +1,53 @@
+body {
+    background: #eaeaea;
+}
+
+form {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.search {
+    height: 25px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 2px solid #0db8f2;
+    border-radius: 5px;
+}
+
+fieldset {
+    border-radius: 5px;
+    border: 2px solid #0db8f2;
+}
+
+.submit {
+    padding: 5px 15px;
+    background: #0db8f2;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+
+}
+
+th {
+    background: #0db8f2;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+td {
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: white;
+}
+
+tr:nth-child(odd) {
+    background: #ecfaff;
+}

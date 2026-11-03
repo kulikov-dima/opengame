@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>StopGame</h1>
+    <h2>Фильтры</h2>
+    <form action="" method="get">
+        <p>
+            <label for="search">Название: </label>
+            <input class="search" placeholder="Введите название" id="search" type="text" name="search" size="30"
+                required>
+        </p>
+        <p>
+            <label for="platform">Выберите платформу: </label>
+            <select id="platform" name="platform">
+                <option value="any">Любая</option>
+                <option value="pc">PC</option>
+                <option value="ps4">PS4</option>
+            </select>
+        </p>
+        <p>
+        <fieldset>
+            <legend>Жанр</legend>
+            <input id="rpg" type="checkbox" name="genre" value="RPG">
+            <label for="rpg">RPG</label>
+            <input id="racing" type="checkbox" name="genre" value="racing">
+            <label for="racing">Гонки</label>
+            <input id="quest" type="checkbox" name="genre" value="quest">
+            <label for="quest">Квест</label>
+        </fieldset>
+        </p>
+        <input class="submit" type="submit" value="Применить">
+    </form>
+    <p>
+
+    <table>
+        <!-- tr - table row -->
+        <!-- td - table data -->
+        <!-- th - table header -->
+        <tr>
+            <th>Ссылка</th>
+            <th>Название</th>
+            <th>Рейтинг</th>
+            <th>Год</th>
+        </tr>
+        {{games}}
+        <!-- <tr>
+                <td>/mario</td>
+                <td>Mario</td>
+                <td>8.7</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <td>/minecraft</td>
+                <td>Minecraft</td>
+                <td>9.2</td>
+                <td>2011</td>
+            </tr>
+            <tr>
+                <td>/mario</td>
+                <td>Mario</td>
+                <td>8.7</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <td>/minecraft</td>
+                <td>Minecraft</td>
+                <td>9.2</td>
+                <td>2011</td>
+            </tr> -->
+    </table>
+    </p>
+
+</body>
+
+</html>
