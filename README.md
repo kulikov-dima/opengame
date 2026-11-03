@@ -14,49 +14,49 @@
  * dataclasses
 # Установка и проверка
  1. Для установки зависимостей необходимо выполнить
-    ```commandline
+    ```shell
     pip install -r requirements.txt 
     ```
  2. Готово! Теперь можно вызвать справку.
-      ```commandline
+      ```shell
       python main.py --help 
       ```
 # Использование
  * Для вызова справки необходимо запустить программу с флагом -h или --help
-     ```commandline
+     ```shell
     python main.py --help
      ```
  * Чтобы обновить списки тегов и платформ необходимо выполнить
-     ```commandline
+     ```shell
      python main.py update
      ```
  * Чтобы показать списки игр с первой страницы необходимо сделать
-     ```commandline
+     ```shell
      python main.py -v games
      ```
    #### Важно, перед выводом/экспортом списка игр необходимо сделать `python main.py update`
  * Чтобы отфильтровать списки игр по платформе надо добавить флаг --platforms
-     ```commandline
+     ```shell
      python main.py -v games --platforms "Linux"
      ```
    Также можно совмещать несколько платформ, например
-   ```commandline
+   ```shell
    python main.py -v games --platforms "Linux" "Sony PlayStation 5"
    ```
  * Чтобы отфильтровать по жанру нужно сделать сделать
-   ```commandline
+   ```shell
    python main.py -v games --genres "Мод"
    ```
  *  Также можно объединять как в случае с platforms
-    ```commandline
+    ```shell
     python main.py -v games --genres "Мод" "Стратегия"
     ```
  * Флаги можно комбинировать
-   ```commandline
+   ```shell
    python main.py -v games --genres "Мод" "Стратегия" --platforms "Linux" "Sony PlayStation 5"
    ```
  * Чтобы экспортировать в csv нужно сделать
-   ```commandline
+   ```shell
    python main.py -v games --out "output.csv"
    ```
 # Ограничения 

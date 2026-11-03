@@ -3,6 +3,7 @@ import logging
 import reference
 from build_parser import build_parser
 from client import StopGameClient
+from web import app as web
 
 from logging_config import BASIC_CONFIG
 
@@ -50,16 +51,18 @@ def cmd_games(args):
 
     logger.debug(f"{platform_codes=}, {tag_slugs=}")
 
-    #resp = reference.get_games(page=args.pages, verbose=args.verbose, tags=tag_slugs, platforms=platform_codes, args=args)
-
-
-
+    resp = reference.get_games(page=args.pages, verbose=args.verbose, tags=tag_slugs, platforms=platform_codes, args=args)
+def cmd_web(args):
+    logger.info(f"Open{' not' if not args.threaded else ''} threaded web-server at {args.host}:{args.port}")
+    web.main(args.host, args.port, args.threaded, args.debug)
+    logger.info(f"Open{' not' if not args.threaded else ''} threaded web-server at {args.host}:{args.port}")
 def main():
     commands = {
         "update": cmd_update,
         "genres": cmd_genres,
         "platforms": cmd_platforms,
         "games": cmd_games,
+        "web": cmd_web
     }
     parser = build_parser()
     args = parser.parse_args()

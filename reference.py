@@ -94,6 +94,7 @@ def get_games(page: str = 1, tags: list = None, platforms: list = None, verbose:
     parser = build_parser()
     resp: list = list([])
     zzzzzzz = False
+    verbose = True
     for w in range(page):
         params = {
             "p": w + 1

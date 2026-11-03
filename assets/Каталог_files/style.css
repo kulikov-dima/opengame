@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "NerdFont";
+    src: url('fonts/font.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0 100px;
+}
+
+.plas {
+    border-radius: 10px;
+    color: black;
+    padding: 5px 10px;
+}
+
+.new_ {
+    background-color: greenyellow;
+}
+
+.best_ {
+    background-color: rgb(255, 122, 74);
+}
+
+.best {
+    color: rgb(255, 186, 58)
+
+}
+
+.short {
+    background-color: rgb(201, 135, 255)
+}
+a {
+    color: #2189ff
+}
+
+.classic {
+    background-color: rgb(255, 255, 128);
+}
+
+.long {
+    background-color: #90ffb1;
+}
+
+.nerd {
+    font-family: "NerdFont";
+}
+
+.normal-size {
+    
+    background-color: #6afaee;
+}
+
+details {
+    padding: 0 10px
+}
+
+.author {
+    color: gray;
+}
+
+.book-article {
+    border: rgb(187, 187, 187) 2px solid;
+    border-radius: 10px;
+    margin: 3px 0px;
+    padding: 10px 5px;
+    width: 300px;    
+}
+
+
+.genre-article {
+    background-color: #e6ecf5;
+    border-radius: 20px;
+    padding: 7.5px;
+    color: #2b5cb8;
+    margin: 5px;
+
+}
+
+.first_book {
+    border-color: goldenrod;
+}
+
+
+
+table {
+    border-spacing: 0;
+}
+.first-table {
+    color: white;
+    background-color: #2d3a4a;
+}
+
+th, td {
+    padding: 12px 0 ;
+    text-align: center;
+}
+
+
+.table-one {
+    background-color: #eef1f6;
+    padding: 12px 0 ;
+}
+
+.table-zero {
+    background-color: #fff;
+    padding: 12px 0 ;
+}
+
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+}
+
+
+.goto {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+.goto:hover {
+    transform: scale(1.1);
+
+}
+
+
+.header a{
+    color: #dfe6ee;
+    text-decoration: none;
+    margin: 25px;
+    font-size: 25px;
+}
+
+.header {
+    background-color: #2d3a4a;
+    max-width: none;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.header .current {
+    border-bottom: 3px solid #f0b429;
+}

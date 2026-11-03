@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "NerdFont";
+    src: url('font.ttf') format('truetype');
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+body {
+    font-family: "NerdFont", monospace;
+    background-color: rgb(240, 240, 240);;
+    max-width: 750px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+form {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 10px;
+    margin-top: 50px;
+}
+
+.sumbit {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: blueviolet;
+    color: white;
+    border-color: blueviolet;
+}
+
+.table_header {
+    color: white;
+    background: blueviolet;
+    padding: 0;
+}
+
+td {
+    padding: 15px;
+    border-spacing: 0px;
+}
+
+tr {
+    background-color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(237, 218, 255);
+}
+    
+table {
+    border-spacing: 0px;
+}
+
+fieldset {
+    border: none;
+}
+
+input {
+    background-color: rgb(232, 215, 255);
+    border: none;
+    border-radius: 10px;
+    padding: 7.5px;
+    color: black
+}
+
+.aaa {
+    font-family: "NerdFont";
+    /* color: rgb(96, 152, 255) */
+    color: black
+}
+
+.goto {
+    
+    text-align: center;
+    &:hover { transform: scale(1.1); }
+    & a {
+        color: black; 
+        text-decoration: none;
+    }
+}
+
+.header {
+    background-color: #2d3a4a;
+    max-width: none;
+    height: 50px;
+    margin-bottom: 20px;
+    & .current {border-bottom: 3px solid #f0b429;}
+    
+    & a{
+        color: #dfe6ee;
+        text-decoration: none;
+        margin: 25px;
+        font-size: 25px;
+    }
+
+}
+

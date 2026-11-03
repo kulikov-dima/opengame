@@ -34,5 +34,11 @@ def build_parser() -> argparse.ArgumentParser:
     update_subpars.add_argument("-s", "--save", help="Имя выходного файла (csv)", type=str)
     p_games.add_argument("--out", default="games.csv", help="куда сохранить результат")
 
+    p_host = subparsers.add_parser("web", help="веб-панель", parents=[common_parser])
+
+    p_host.add_argument("-H", '--host', help="Хост сайта", default="127.0.0.1")
+    p_host.add_argument("-p", "--port", help="Порт сайта", default=5000)
+    p_host.add_argument("-t", "--threaded", action="store_true", help="Активировать многопоточный режим")
+    p_host.add_argument("-d", "--debug", action="store_true", help="Включить debug-режим")
     return parser
 

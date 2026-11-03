@@ -1,8 +1,9 @@
 import logging
+import os
 
 BASIC_CONFIG = {"level": logging.DEBUG,
-                "filename": "log.log",
-                "format": "%(asctime)s %(levelname)-7s %(name)s: %(message)s",
+                # "filename": os.path.join(os.path.dirname(os.path.abspath(__file__)), "log.log"),
+                "format": "[%(asctime)s %(levelname)-7s ] %(name)s: %(message)s",
                 "datefmt": "%H:%M:%S", }
 class Logger():
     class UncorrectLogLevelError(Exception): pass
