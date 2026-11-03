@@ -1,61 +1,127 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Каталог игр</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catalog.css">
+    <title>Document</title>
+    <style>
+        body {
+            background: #eaeaea;
+        }
+        form {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .search {
+            height: 25px;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 2px solid #0db8f2;
+            border-radius: 5px;
+        }
+        fieldset {
+            border-radius: 5px;
+            border: 2px solid #0db8f2;
+        }
+        .submit {
+            padding: 5px 15px;
+            background: #0db8f2;
+            border: 0px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+
+        }
+        th {
+            background: #0db8f2;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        td {
+            border-radius: 3px;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background: white;
+        }
+        tr:nth-child(odd) {
+            background: #ecfaff;
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>OpenGame</h1>
-    </header>
+    <h1>StopGame</h1>
+    <h2>Фильтры</h2>
+    <form action="" method="get">
+        <p>
+            <label for="search">Название: </label>
+            <input class="search" placeholder="Введите название" id="search" type="text" name="search" size="30" required>
+        </p>
+        <p>
+            <label for="platform">Выберите платформу: </label>
+            <select id="platform" name="platform">
+                <option value="any">Любая</option>
+                <option value="pc">PC</option>
+                <option value="ps4">PS4</option>
+            </select>
+        </p>
+        <p>
+            <fieldset>
+                <legend>Жанр</legend>
+                <input id="rpg" type="checkbox" name="genre" value="RPG">
+                <label for="rpg">RPG</label>
+                <input id="racing" type="checkbox" name="genre" value="racing">
+                <label for="racing">Гонки</label>
+                <input id="quest" type="checkbox" name="genre" value="quest">
+                <label for="quest">Квест</label>
+            </fieldset>
+        </p>
+        <input class="submit" type="submit" value="Применить">
+    </form>
+    <p>
 
-    <main>
-        <section>
-            <h2>Фильтры</h2>
-            <form action="" method="GET">
-                <p>
-                    <label for="query">Название:</label>
-                    <input id="query" name="query" type="search" placeholder="Например, witcher">
-                </p>
-                <p>
-                    <label for="platform">Платформа:</label>
-                    <select id="platform" name="platform">
-                        <option value="any">Любая</option>
-                        <option value="pc">PC</option>
-                        <option value="ps4">PS4</option>
-                        <option value="ns">Nintendo Switch</option>
-                        <option value="gba">GameBoy Advance</option>
-                    </select>
-                </p>
-                <p>
-                    Жанры:<br>
-                    <label><input type="checkbox" value="rpg" name="genre"> RPG</label>
-                    <label><input type="checkbox" value="strategy" name="genre"> Стратегия</label>
-                    <label><input type="checkbox" value="racing" name="genre"> Гонки</label>
-                </p>
-                <p>
-                    <button type="submit">Применить</button>
-                </p>
-
-            </form>
-        </section>
-
-        <section>
-            <h2>Игры</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ссылка</th><th>Название</th><th>Дата выхода</th>
-                        <th>Рейтинг</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{ROWS}}
-                </tbody>
-            </table>
-        </section>
-    </main>
-
+        <table>
+            <!-- tr - table row -->
+            <!-- td - table data -->
+            <!-- th - table header -->
+            <tr>
+                <th>Ссылка</th>
+                <th>Название</th>
+                <th>Рейтинг</th>
+                <th>Год</th>
+            </tr>
+            {{DATA}}
+            <!-- <tr>
+                <td>/mario</td>
+                <td>Mario</td>
+                <td>8.7</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <td>/minecraft</td>
+                <td>Minecraft</td>
+                <td>9.2</td>
+                <td>2011</td>
+            </tr>
+            <tr>
+                <td>/mario</td>
+                <td>Mario</td>
+                <td>8.7</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <td>/minecraft</td>
+                <td>Minecraft</td>
+                <td>9.2</td>
+                <td>2011</td>
+            </tr> -->
+        </table>
+    </p>
+    
 </body>
 </html>

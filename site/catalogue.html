@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catalog.css">
+    <title>Document</title>
+    <style>
+        body {
+            background: #eaeaea;
+        }
+        form {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .search {
+            height: 25px;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 2px solid #0db8f2;
+            border-radius: 5px;
+        }
+        fieldset {
+            border-radius: 5px;
+            border: 2px solid #0db8f2;
+        }
+        .submit {
+            padding: 5px 15px;
+            background: #0db8f2;
+            border: 0px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+
+        }
+        th {
+            background: #0db8f2;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        td {
+            border-radius: 3px;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background: white;
+        }
+        tr:nth-child(odd) {
+            background: #ecfaff;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>StopGame</h1>
+    <h2>Фильтры</h2>
+    <form action="" method="get">
+        <p>
+            <label for="search">Название: </label>
+            <input class="search" placeholder="Введите название" id="search" type="text" name="search" size="30" required>
+        </p>
+        <p>
+            <label for="platform">Выберите платформу: </label>
+            <select id="platform" name="platform">
+                <option value="any">Любая</option>
+                <option value="pc">PC</option>
+                <option value="ps4">PS4</option>
+            </select>
+        </p>
+        <p>
+            <fieldset>
+                <legend>Жанр</legend>
+                <input id="rpg" type="checkbox" name="genre" value="RPG">
+                <label for="rpg">RPG</label>
+                <input id="racing" type="checkbox" name="genre" value="racing">
+                <label for="racing">Гонки</label>
+                <input id="quest" type="checkbox" name="genre" value="quest">
+                <label for="quest">Квест</label>
+            </fieldset>
+        </p>
+        <input class="submit" type="submit" value="Применить">
+    </form>
+    <p>
+
+        <table>
+            <!-- tr - table row -->
+            <!-- td - table data -->
+            <!-- th - table header -->
+            <tr>
+                <th>Ссылка</th>
+                <th>Название</th>
+                <th>Рейтинг</th>
+                <th>Год</th>
+            </tr>
+            <tr><td>/game/acro_fs</td><td>Acro FS</td><td>23 мая 2018</td><td>0</td></tr>
+<tr><td>/game/monster_slider</td><td>Monster Slider</td><td>28 марта 1997</td><td>0</td></tr>
+<tr><td>/game/tryst</td><td>Tryst</td><td>14 сентября 2012</td><td>0</td></tr>
+<tr><td>/game/thnt_target_hunt_n_terminate</td><td>THNT: Target Hunt 'N Terminate</td><td>21 марта 2023</td><td>0</td></tr>
+<tr><td>/game/half_baked_girls</td><td>HALF-BAKED GIRLS</td><td>30 сентября 2024</td><td>0</td></tr>
+<tr><td>/game/night_shippers</td><td>Night Shippers</td><td>6 апреля 2026</td><td>0</td></tr>
+<tr><td>/game/sango_guardian_chaos_generation_steamedition</td><td>Sango Guardian Chaos Generation Steamedition</td><td>7 августа 2017</td><td>0</td></tr>
+<tr><td>/game/litgirls_bookbound_dungeons</td><td>LitGirls: Bookbound Dungeons</td><td>2027</td><td></td></tr>
+<tr><td>/game/moonfrost</td><td>Moonfrost</td><td>12 октября 2026</td><td></td></tr>
+<tr><td>/game/portabellows</td><td>Portabellows</td><td>12 ноября 2026</td><td></td></tr>
+<tr><td>/game/whoishe</td><td>WhoIsHe</td><td>15 октября 2026</td><td></td></tr>
+<tr><td>/game/sails</td><td>Sails</td><td>2026</td><td></td></tr>
+<tr><td>/game/delivery_issues</td><td>Delivery Issues</td><td>2027</td><td></td></tr>
+<tr><td>/game/the_loopler</td><td>The Loopler</td><td>11 сентября 2026</td><td>0</td></tr>
+<tr><td>/game/ariadnes_tale</td><td>Ariadne's Tale</td><td>2026</td><td></td></tr>
+<tr><td>/game/police_chief_simulator</td><td>Police Chief Simulator</td><td>17 сентября 2026</td><td>0</td></tr>
+<tr><td>/game/cafe_business_manager</td><td>Cafe Business Manager</td><td>10 апреля 2026</td><td>0</td></tr>
+<tr><td>/game/a_foreign_world</td><td>A Foreign World</td><td>18 июля 2026</td><td>0</td></tr>
+<tr><td>/game/the_lord_of_the_rings_online_the_wolves_of_mordor</td><td>The Lord of the Rings Online: The Wolves of Mordor</td><td>21 октября 2026</td><td></td></tr>
+<tr><td>/game/icy_tower_2</td><td>Icy Tower 2</td><td>9 ноября 2012</td><td>0</td></tr>
+<tr><td>/game/icy_tower_2026</td><td>Icy Tower (2026)</td><td>10 ноября 2026</td><td></td></tr>
+<tr><td>/game/icy_tower</td><td>Icy Tower</td><td>22 декабря 2001</td><td>3.0</td></tr>
+<tr><td>/game/cikl_proshlogo</td><td>Цикл прошлого</td><td>31 мая 2026</td><td>0</td></tr>
+<tr><td>/game/miss_kobayashis_dragon_maid_fantasia</td><td>Miss Kobayashi's Dragon Maid Fantasia</td><td>30 января 2026</td><td>0</td></tr>
+<tr><td>/game/dinobones_tidy_up_the_museum</td><td>DinoBones: Tidy Up the Museum</td><td>25 сентября 2026</td><td>0</td></tr>
+<tr><td>/game/time_to_ride_saddles_and_stables</td><td>Time to Ride: Saddles and Stables</td><td>9 ноября 2005</td><td>3.0</td></tr>
+<tr><td>/game/kaguya</td><td>Kaguya</td><td>2027</td><td></td></tr>
+<tr><td>/game/wand_and_order_tidy_up_the_magic_shop</td><td>Wand & Order: Tidy up the magic shop!</td><td>23 сентября 2026</td><td>4.0</td></tr>
+<tr><td>/game/goat_simulator_3_ticket_to_dizzyworld</td><td>Goat Simulator 3 – Ticket to Dizzyworld</td><td>19 ноября 2026</td><td></td></tr>
+<tr><td>/game/taking_my_dark_knight_girlfriend_to_the_corner_store</td><td>taking my Dark Knight Girlfriend to the corner store</td><td>5 сентября 2025</td><td>0</td></tr>
+            <!-- <tr>
+                <td>/mario</td>
+                <td>Mario</td>
+                <td>8.7</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <td>/minecraft</td>
+                <td>Minecraft</td>
+                <td>9.2</td>
+                <td>2011</td>
+            </tr>
+            <tr>
+                <td>/mario</td>
+                <td>Mario</td>
+                <td>8.7</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <td>/minecraft</td>
+                <td>Minecraft</td>
+                <td>9.2</td>
+                <td>2011</td>
+            </tr> -->
+        </table>
+    </p>
+    
+</body>
+</html>
