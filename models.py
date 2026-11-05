@@ -1,11 +1,7 @@
-from dataclasses import  dataclass
+from dataclasses import  dataclass, field
+from typing import Optional
 
-@dataclass
-class Game:
-    url: str
-    name: str
-    year: str
-    rating: str
+
 
 @dataclass
 class Tag:
@@ -26,3 +22,11 @@ class Platform:
         names = [self.code, self.title]
         names = [name.strip().lower() for name in names]
         return user_input in names
+@dataclass
+class Game:
+    url: str
+    name: str
+    year: str
+    rating: str
+    genres: Optional[list[Tag]] = field(default=list)
+    platforms: Optional[list[Platform]] = field(default=list)

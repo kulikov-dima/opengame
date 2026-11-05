@@ -8,7 +8,8 @@ from bs4 import BeautifulSoup as bs
 import models
 from build_parser import build_parser
 import csv
-
+import re
+from bs4 import BeautifulSoup as bs4
 logger = logging.getLogger(__name__)
 
 CONFIG_DIR = "config"
@@ -20,7 +21,9 @@ def export_games(games: list[Game], output="games.csv") -> str:
         "Ссылка",
         "Название",
         "Дата выхода",
-        "Рейтинг"
+        "Рейтинг",
+        "Жанры",
+        "Платформы"
     ]
     with open(output, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=games_headers, extrasaction='ignore')
@@ -32,7 +35,9 @@ def export_games(games: list[Game], output="games.csv") -> str:
                     "Ссылка": game.url,
                     "Название": game.name,
                     "Дата выхода": game.year,
-                    "Рейтинг": game.rating
+                    "Рейтинг": game.rating,
+                    "Жанры": " ".join([f"{genre.slug}={genre.name.replace(" ", "~")}" for genre in game.genres]),
+                    "Платформы": " ".join([f"{platform.code}={platform.title.replace(" ", "~")}" for platform in game.platforms])
                 }
             )
         writer.writerows(result_dict)
@@ -138,6 +143,7 @@ def get_games(page: str = 1, tags: list = None, platforms: list = None, verbose:
                             break
                         else:
                             zzzzzzz = False
+            
 
 
             if not zzzzzzz:
@@ -153,12 +159,42 @@ def info_by_soup(soup, show: bool = False, _step: str = "", _start: str = "\n", 
         rating = soup.find("div", class_="_left-column__user-ratings_1bso0_1").find("span").text
     except AttributeError:
         rating = "Отсутствует"
+    try:
+        platforms_w: bs4 = soup.find("dt", string=re.compile("Платформы"))
+        t = platforms_w.find_next("dd")
+        names = t.find_all("a")
+        platforms = []
+        for nam in names:
+            u = nam["href"].split("/games/")[1]
+            platfor = (Platform(u, nam.string))
+            platforms.append(platfor)
+        print(t.prettify())
+        
+    except AttributeError:
+        platforms = []
+
+    try:
+        tags_container = soup.find("div", class_="_tag-list_82nn8_724 _tags_1bso0_987")
+
+        tags_soup = tags_container.find_all("a", class_="_tag_82nn8_724")
+        tags = []
+        for tag in tags_soup:
+            tag: bs4 = tag
+            tag_slug = tag["href"].split("/games/")[1]
+            tag_name = tag.text
+            tags.append(Tag(tag_slug, tag_name))
+        print(tags)
+    except AttributeError: platforms = []
+    
     if show:
         print(f"{_start}{_step}Информация о игре {name}:")    
         print(f"{_step}    Имя: {name}")
         print(f"{_step}    Дата выхода: {date_of_out}")
         print(f'{_step}    Рейтинг: {rating}')
-    return models.Game(url, name, year=date_of_out, rating=rating)
+    return Game(url, name, year=date_of_out, rating=rating, genres=tags, platforms=platforms)
+
+update_genres = lambda: save_tags(StopGameClient().fetch_tags())
+update_platforms = lambda: save_platforms(StopGameClient().fetch_platforms())    
 if __name__ == "__main__":
     # from client import StopGameClient
     # from logging_config import BASIC_CONFIG
@@ -168,4 +204,5 @@ if __name__ == "__main__":
     # # save_tags(client.fetch_tags())
     # # save_platforms(client.fetch_platforms())
     # print(load_platforms())
-    get_games()
+    get_games(count=5)
+    

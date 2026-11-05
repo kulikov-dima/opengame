@@ -4,6 +4,7 @@ import requests
 import logging
 from requests.exceptions import HTTPError, ConnectionError, Timeout, RequestException
 from logging_config import BASIC_CONFIG
+from consts import *
 
 logger = logging.getLogger(__name__)
 
@@ -66,7 +67,6 @@ class StopGameClient:
             "status": 0,
             "content": response
         }
-
 if __name__ == "__main__":
     logging.basicConfig(**BASIC_CONFIG)
     client = StopGameClient()
