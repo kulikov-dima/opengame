@@ -3,6 +3,7 @@ import time
 from models import Game
 import requests
 import logging
+import re
 
 from logging_config import BASIC_CONFIG
 
@@ -17,9 +18,9 @@ class StopGameClient:
             "sec-ch-ua": "\"Not=A?Brand\";v=\"99\", \"Google Chrome\";v=\"151\", \"Chromium\";v=\"151\"",
             "sec-ch-ua-mobile": "?0",
             "sec-ch-ua-platform": "\"Windows\"",
-            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
         }
-        self.delay = 1
+        self.delay = 0.2
 
     def fetch_tags(self) -> list[dict]:
         response = self._get("/ajax/games/tags")
@@ -31,8 +32,9 @@ class StopGameClient:
         platforms = response.json().get("platforms")
         return platforms
 
-    def fetch_catalog_page(self, tag_slugs: list[str],
-                           platform_codes: list[str], page: int = 1) -> str:
+    def fetch_catalog_page(
+        self, tag_slugs: list[str], platform_codes: list[str], page: int = 1
+    ) -> str:
         logger.info("Гружу страницу каталог")
         params = {
             "genre[]": tag_slugs,
@@ -58,14 +60,33 @@ class StopGameClient:
         return game_hrefs
 
     @staticmethod
-    def parse_game_page(html, url) -> Game:
+    def parse_game_page(html) -> Game:
         soup = BeautifulSoup(html, "html.parser")
-        title = soup.find("h1", class_="_game-title_1bso0_702").text
-        rating = soup.find("span", class_="_game-rating_1bso0_165")
+        title = soup.find("h1", class_=re.compile(r"^_game-title_")).text
+        rating = soup.find("span", class_=re.compile(r"^_game-rating_"))
+        tags_container = soup.find("div", class_=re.compile(r"^_tag-list"))
+        tags_a = tags_container.find_all("a")
+        platforms_label = soup.find("dt", string="Платформы")
+        platforms_container = platforms_label.find_next("dd")
+        platforms_a = platforms_container.find_all("a")
+        tags = []
+        for link in tags_a:
+            tags.append(link.attrs['href'].split('/')[-1])
+
+        platforms = []
+        for link in platforms_a:
+            platforms.append(link.attrs['href'].split('/')[-1])
+
         if rating:
             rating = rating.text
+
         year = soup.find("dd").text
-        return Game(url=url, name=title, year=year, rating=rating)
+        logger.debug(f"{title=}")
+        logger.debug(f"{rating=}")
+        logger.debug(f"{tags=}")
+        logger.debug(f"{platforms=}")
+        logger.debug(f"{year=}")
+        return Game(name=title, year=year, rating=rating, platforms="~".join(platforms), tags="~".join(tags))
 
     def _get(self, url: str, params: dict | None = None):
         logger.debug(f"GET {url=} {params=}")
@@ -82,5 +103,7 @@ class StopGameClient:
 
 if __name__ == "__main__":
     logging.basicConfig(**BASIC_CONFIG)
+    logging.basicConfig(level='debug')
     client = StopGameClient()
-    print(client.fetch_tags())
+    html = client._get('game/grand_theft_auto_5').text
+    client.parse_game_page(html)

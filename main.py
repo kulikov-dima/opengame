@@ -11,6 +11,7 @@ from models import Game
 from logging_config import BASIC_CONFIG
 import csv
 from dataclasses import asdict, fields
+import sys
 
 logger = logging.getLogger(__name__)
 
@@ -116,13 +117,15 @@ def cmd_games(args):
     logger.debug(f"{platform_codes=}, {tag_slugs=}")
 
     client = StopGameClient()
-    page = client.fetch_catalog_page(tag_slugs=tag_slugs, platform_codes=platform_codes)
-    links = client.extract_game_hrefs(page)
     games_result: list[Game] = []
-    for link in links:
-        game_page = client.fetch_game_page(link)
-        game = client.parse_game_page(game_page, link)
-        games_result.append(game)
+    for page in range(1, args.pages + 1):
+        page = client.fetch_catalog_page(tag_slugs=tag_slugs, platform_codes=platform_codes)
+        links = client.extract_game_hrefs(page)
+        for link in links:
+            game_page = client.fetch_game_page(link)
+            game = client.parse_game_page(game_page)
+            game.url = link
+            games_result.append(game)
     # TODO: refactor to a function or method
     if not os.path.exists(OUT_DIR):
         os.makedirs(OUT_DIR)
@@ -153,6 +156,10 @@ def main():
     logging.basicConfig(
         **BASIC_CONFIG,
     )
+
+    if not args.command:
+        parser.print_help()
+        sys.exit(1)
 
     func = commands[args.command]  # выбираем функцию по имени команды
     func(args)

@@ -1,31 +1,91 @@
-url,name,year,rating
-/game/acro_fs,Acro FS,23 мая 2018,0
-/game/monster_slider,Monster Slider,28 марта 1997,0
-/game/tryst,Tryst,14 сентября 2012,0
-/game/thnt_target_hunt_n_terminate,THNT: Target Hunt 'N Terminate,21 марта 2023,0
-/game/half_baked_girls,HALF-BAKED GIRLS,30 сентября 2024,0
-/game/night_shippers,Night Shippers,6 апреля 2026,0
-/game/sango_guardian_chaos_generation_steamedition,Sango Guardian Chaos Generation Steamedition,7 августа 2017,0
-/game/litgirls_bookbound_dungeons,LitGirls: Bookbound Dungeons,2027,
-/game/moonfrost,Moonfrost,12 октября 2026,
-/game/portabellows,Portabellows,12 ноября 2026,
-/game/whoishe,WhoIsHe,15 октября 2026,
-/game/sails,Sails,2026,
-/game/delivery_issues,Delivery Issues,2027,
-/game/the_loopler,The Loopler,11 сентября 2026,0
-/game/ariadnes_tale,Ariadne's Tale,2026,
-/game/police_chief_simulator,Police Chief Simulator,17 сентября 2026,0
-/game/cafe_business_manager,Cafe Business Manager,10 апреля 2026,0
-/game/a_foreign_world,A Foreign World,18 июля 2026,0
-/game/the_lord_of_the_rings_online_the_wolves_of_mordor,The Lord of the Rings Online: The Wolves of Mordor,21 октября 2026,
-/game/icy_tower_2,Icy Tower 2,9 ноября 2012,0
-/game/icy_tower_2026,Icy Tower (2026),10 ноября 2026,
-/game/icy_tower,Icy Tower,22 декабря 2001,3.0
-/game/cikl_proshlogo,Цикл прошлого,31 мая 2026,0
-/game/miss_kobayashis_dragon_maid_fantasia,Miss Kobayashi's Dragon Maid Fantasia,30 января 2026,0
-/game/dinobones_tidy_up_the_museum,DinoBones: Tidy Up the Museum,25 сентября 2026,0
-/game/time_to_ride_saddles_and_stables,Time to Ride: Saddles and Stables,9 ноября 2005,3.0
-/game/kaguya,Kaguya,2027,
-/game/wand_and_order_tidy_up_the_magic_shop,Wand & Order: Tidy up the magic shop!,23 сентября 2026,4.0
-/game/goat_simulator_3_ticket_to_dizzyworld,Goat Simulator 3 – Ticket to Dizzyworld,19 ноября 2026,
-/game/taking_my_dark_knight_girlfriend_to_the_corner_store,taking my Dark Knight Girlfriend to the corner store,5 сентября 2025,0
+url,name,year,rating,platforms,tags
+/game/volfoss,Volfoss,22 февраля 2001,0,PS,rpg~turn-based~tactical~fantasy~science-fiction~single-player~bird-view-slash-isometric
+/game/air_band,Air Band,22 августа 2011,0,X360,music~single-player~co-operative~split-screen~side-view
+/game/idol_mahjong_final_romance_2,Idol Mahjong: Final Romance 2,1995,0,NSW~Arcade_Cabinet~NGCD~SAT~3DO~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance_r,Idol Mahjong Final Romance R,1995,0,PC~NSW~Arcade_Cabinet~SAT~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance_4,Idol Mahjong Final Romance 4,1998,0,PC~NSW~Arcade_Cabinet~SAT~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance,Idol Mahjong Final Romance,1991,0,Arcade_Cabinet,cards~for-adults~logic~single-player
+/game/igo_time_trial_shikatsu_daihyakka,Igo Time Trial: Shikatsu Daihyakka,11 августа 1995,0,3DO,logic~turn-based~single-player
+/game/iida_joji_nightmare_interactive_moon_cradle_igyou_no_hanayome,Iida Joji Nightmare Interactive: Moon Cradle-Igyou no Hanayome,15 декабря 1995,0,3DO,adventure~point-and-click~mystery~thriller~single-player~bird-view-slash-isometric~side-view
+/game/immercenary,Immercenary,16 марта 1995,0,3DO,action~shooter~science-fiction~single-player~first-person
+/game/insector_war,Insector War,16 декабря 1994,0,3DO,action~online~shooter~single-player~split-screen~first-person
+/game/iron_angel_of_the_apocalypse,Iron Angel of the Apocalypse,9 апреля 1994,0,3DO,action~shooter~science-fiction~single-player~first-person
+/game/iron_angel_of_the_apocalypse_the_return,Iron Angel of the Apocalypse: The Return,22 сентября 1995,0,PC~3DO,action~shooter~science-fiction~single-player~first-person
+/game/ishida_yoshio_kudan_no_igo_seiha,Ishida Yoshio Kudan no Igo Seiha,27 января 1995,0,3DO,logic~turn-based~single-player~bird-view-slash-isometric
+/game/sisyphus_is_a_bug,Sisyphus Is a Bug,14 ноября 2025,0,PC~Linux,adventure~single-player~side-view
+/game/simsala_grimm_the_chaos_crystal,Simsala Grimm: The Chaos Crystal,29 октября 2026,0,PC,adventure~point-and-click~single-player~side-view
+/game/myths_of_the_world_fire_of_olympus,Myths of the World: Fire of Olympus,6 июля 2017,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/myths_of_the_world_behind_the_veil,Myths of the World: Behind the Veil,10 ноября 2017,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/myths_of_the_world_fire_from_the_deep,Myths of the World: Fire from the Deep,16 августа 2018,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/kinect_nat_geo_tv_america_the_wild,Kinect Nat Geo TV: America the Wild,18 сентября 2012,0,X360,adventure~educational~single-player~co-operative~split-screen~first-person~third-person
+/game/enigma_express,Enigma Express,25 июня 2014,0,iOS~Android,logic~single-player~side-view
+/game/quiz_climber,Quiz Climber,14 июля 2011,0,iOS,quiz-trivia~single-player~text
+/game/noon,Noon,29 января 1998,0,PC~PS~SAT,action~arcade~logic~online~single-player~split-screen~bird-view-slash-isometric
+/game/rudolph_the_red_nosed_reindeer_king_moonracer_s_kingdom_of_misfits,Rudolph the Red-Nosed Reindeer - King Moonracer’s Kingdom of Misfits,16 октября 2026,0,PC~PS4~PS5~XONE~XBOXSX~NSW~NSW2,series_type_1~adventure~platform~fantasy~single-player~co-operative~split-screen~third-person
+/game/robophobik,RoboPhobik,25 сентября 2020,0,PC,strategy~single-player~bird-view-slash-isometric
+/game/puzzle_and_action_2do_arukoto_wa_sand_r,Puzzle & Action: 2do Arukoto wa Sand-R,октябрь 1995,0,Arcade_Cabinet~SAT,arcade~online~single-player~split-screen~side-view
+/game/mystic_warriors_battleground,Mystic Warriors Battleground,6 апреля 2023,0,PS4~PS5~NSW~NSW2,action~hack-and-slash-beat-em-up~fantasy~single-player~side-view
+/game/shana_priestess_of_tona_endless_desire,Shana - Priestess of Tona: Endless Desire,3 апреля 2026,0,PC,adventure~for-adults~rpg~fantasy~single-player~side-view
+/game/rain_of_lead,Rain of Lead,2027,,PC,action~shooter~single-player~side-view
+/game/polish_pierogi,Polish Pierogi,2026,,PC,simulator~single-player~first-person
+/game/psychotrons,Psychotrons,5 ноября 2026,0,PC,adventure~single-player~side-view
+/game/volfoss,Volfoss,22 февраля 2001,0,PS,rpg~turn-based~tactical~fantasy~science-fiction~single-player~bird-view-slash-isometric
+/game/air_band,Air Band,22 августа 2011,0,X360,music~single-player~co-operative~split-screen~side-view
+/game/idol_mahjong_final_romance_2,Idol Mahjong: Final Romance 2,1995,0,NSW~Arcade_Cabinet~NGCD~SAT~3DO~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance_r,Idol Mahjong Final Romance R,1995,0,PC~NSW~Arcade_Cabinet~SAT~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance_4,Idol Mahjong Final Romance 4,1998,0,PC~NSW~Arcade_Cabinet~SAT~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance,Idol Mahjong Final Romance,1991,0,Arcade_Cabinet,cards~for-adults~logic~single-player
+/game/igo_time_trial_shikatsu_daihyakka,Igo Time Trial: Shikatsu Daihyakka,11 августа 1995,0,3DO,logic~turn-based~single-player
+/game/iida_joji_nightmare_interactive_moon_cradle_igyou_no_hanayome,Iida Joji Nightmare Interactive: Moon Cradle-Igyou no Hanayome,15 декабря 1995,0,3DO,adventure~point-and-click~mystery~thriller~single-player~bird-view-slash-isometric~side-view
+/game/immercenary,Immercenary,16 марта 1995,0,3DO,action~shooter~science-fiction~single-player~first-person
+/game/insector_war,Insector War,16 декабря 1994,0,3DO,action~online~shooter~single-player~split-screen~first-person
+/game/iron_angel_of_the_apocalypse,Iron Angel of the Apocalypse,9 апреля 1994,0,3DO,action~shooter~science-fiction~single-player~first-person
+/game/iron_angel_of_the_apocalypse_the_return,Iron Angel of the Apocalypse: The Return,22 сентября 1995,0,PC~3DO,action~shooter~science-fiction~single-player~first-person
+/game/ishida_yoshio_kudan_no_igo_seiha,Ishida Yoshio Kudan no Igo Seiha,27 января 1995,0,3DO,logic~turn-based~single-player~bird-view-slash-isometric
+/game/sisyphus_is_a_bug,Sisyphus Is a Bug,14 ноября 2025,0,PC~Linux,adventure~single-player~side-view
+/game/simsala_grimm_the_chaos_crystal,Simsala Grimm: The Chaos Crystal,29 октября 2026,0,PC,adventure~point-and-click~single-player~side-view
+/game/myths_of_the_world_fire_of_olympus,Myths of the World: Fire of Olympus,6 июля 2017,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/myths_of_the_world_behind_the_veil,Myths of the World: Behind the Veil,10 ноября 2017,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/myths_of_the_world_fire_from_the_deep,Myths of the World: Fire from the Deep,16 августа 2018,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/kinect_nat_geo_tv_america_the_wild,Kinect Nat Geo TV: America the Wild,18 сентября 2012,0,X360,adventure~educational~single-player~co-operative~split-screen~first-person~third-person
+/game/enigma_express,Enigma Express,25 июня 2014,0,iOS~Android,logic~single-player~side-view
+/game/quiz_climber,Quiz Climber,14 июля 2011,0,iOS,quiz-trivia~single-player~text
+/game/noon,Noon,29 января 1998,0,PC~PS~SAT,action~arcade~logic~online~single-player~split-screen~bird-view-slash-isometric
+/game/rudolph_the_red_nosed_reindeer_king_moonracer_s_kingdom_of_misfits,Rudolph the Red-Nosed Reindeer - King Moonracer’s Kingdom of Misfits,16 октября 2026,0,PC~PS4~PS5~XONE~XBOXSX~NSW~NSW2,series_type_1~adventure~platform~fantasy~single-player~co-operative~split-screen~third-person
+/game/robophobik,RoboPhobik,25 сентября 2020,0,PC,strategy~single-player~bird-view-slash-isometric
+/game/puzzle_and_action_2do_arukoto_wa_sand_r,Puzzle & Action: 2do Arukoto wa Sand-R,октябрь 1995,0,Arcade_Cabinet~SAT,arcade~online~single-player~split-screen~side-view
+/game/mystic_warriors_battleground,Mystic Warriors Battleground,6 апреля 2023,0,PS4~PS5~NSW~NSW2,action~hack-and-slash-beat-em-up~fantasy~single-player~side-view
+/game/shana_priestess_of_tona_endless_desire,Shana - Priestess of Tona: Endless Desire,3 апреля 2026,0,PC,adventure~for-adults~rpg~fantasy~single-player~side-view
+/game/rain_of_lead,Rain of Lead,2027,,PC,action~shooter~single-player~side-view
+/game/polish_pierogi,Polish Pierogi,2026,,PC,simulator~single-player~first-person
+/game/psychotrons,Psychotrons,5 ноября 2026,0,PC,adventure~single-player~side-view
+/game/volfoss,Volfoss,22 февраля 2001,0,PS,rpg~turn-based~tactical~fantasy~science-fiction~single-player~bird-view-slash-isometric
+/game/air_band,Air Band,22 августа 2011,0,X360,music~single-player~co-operative~split-screen~side-view
+/game/idol_mahjong_final_romance_2,Idol Mahjong: Final Romance 2,1995,0,NSW~Arcade_Cabinet~NGCD~SAT~3DO~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance_r,Idol Mahjong Final Romance R,1995,0,PC~NSW~Arcade_Cabinet~SAT~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance_4,Idol Mahjong Final Romance 4,1998,0,PC~NSW~Arcade_Cabinet~SAT~NSW2,cards~for-adults~logic~single-player
+/game/idol_mahjong_final_romance,Idol Mahjong Final Romance,1991,0,Arcade_Cabinet,cards~for-adults~logic~single-player
+/game/igo_time_trial_shikatsu_daihyakka,Igo Time Trial: Shikatsu Daihyakka,11 августа 1995,0,3DO,logic~turn-based~single-player
+/game/iida_joji_nightmare_interactive_moon_cradle_igyou_no_hanayome,Iida Joji Nightmare Interactive: Moon Cradle-Igyou no Hanayome,15 декабря 1995,0,3DO,adventure~point-and-click~mystery~thriller~single-player~bird-view-slash-isometric~side-view
+/game/immercenary,Immercenary,16 марта 1995,0,3DO,action~shooter~science-fiction~single-player~first-person
+/game/insector_war,Insector War,16 декабря 1994,0,3DO,action~online~shooter~single-player~split-screen~first-person
+/game/iron_angel_of_the_apocalypse,Iron Angel of the Apocalypse,9 апреля 1994,0,3DO,action~shooter~science-fiction~single-player~first-person
+/game/iron_angel_of_the_apocalypse_the_return,Iron Angel of the Apocalypse: The Return,22 сентября 1995,0,PC~3DO,action~shooter~science-fiction~single-player~first-person
+/game/ishida_yoshio_kudan_no_igo_seiha,Ishida Yoshio Kudan no Igo Seiha,27 января 1995,0,3DO,logic~turn-based~single-player~bird-view-slash-isometric
+/game/sisyphus_is_a_bug,Sisyphus Is a Bug,14 ноября 2025,0,PC~Linux,adventure~single-player~side-view
+/game/simsala_grimm_the_chaos_crystal,Simsala Grimm: The Chaos Crystal,29 октября 2026,0,PC,adventure~point-and-click~single-player~side-view
+/game/myths_of_the_world_fire_of_olympus,Myths of the World: Fire of Olympus,6 июля 2017,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/myths_of_the_world_behind_the_veil,Myths of the World: Behind the Veil,10 ноября 2017,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/myths_of_the_world_fire_from_the_deep,Myths of the World: Fire from the Deep,16 августа 2018,0,PC~Mac~iOS~Android,adventure~logic~fantasy~single-player
+/game/kinect_nat_geo_tv_america_the_wild,Kinect Nat Geo TV: America the Wild,18 сентября 2012,0,X360,adventure~educational~single-player~co-operative~split-screen~first-person~third-person
+/game/enigma_express,Enigma Express,25 июня 2014,0,iOS~Android,logic~single-player~side-view
+/game/quiz_climber,Quiz Climber,14 июля 2011,0,iOS,quiz-trivia~single-player~text
+/game/noon,Noon,29 января 1998,0,PC~PS~SAT,action~arcade~logic~online~single-player~split-screen~bird-view-slash-isometric
+/game/rudolph_the_red_nosed_reindeer_king_moonracer_s_kingdom_of_misfits,Rudolph the Red-Nosed Reindeer - King Moonracer’s Kingdom of Misfits,16 октября 2026,0,PC~PS4~PS5~XONE~XBOXSX~NSW~NSW2,series_type_1~adventure~platform~fantasy~single-player~co-operative~split-screen~third-person
+/game/robophobik,RoboPhobik,25 сентября 2020,0,PC,strategy~single-player~bird-view-slash-isometric
+/game/puzzle_and_action_2do_arukoto_wa_sand_r,Puzzle & Action: 2do Arukoto wa Sand-R,октябрь 1995,0,Arcade_Cabinet~SAT,arcade~online~single-player~split-screen~side-view
+/game/mystic_warriors_battleground,Mystic Warriors Battleground,6 апреля 2023,0,PS4~PS5~NSW~NSW2,action~hack-and-slash-beat-em-up~fantasy~single-player~side-view
+/game/shana_priestess_of_tona_endless_desire,Shana - Priestess of Tona: Endless Desire,3 апреля 2026,0,PC,adventure~for-adults~rpg~fantasy~single-player~side-view
+/game/rain_of_lead,Rain of Lead,2027,,PC,action~shooter~single-player~side-view
+/game/polish_pierogi,Polish Pierogi,2026,,PC,simulator~single-player~first-person
+/game/psychotrons,Psychotrons,5 ноября 2026,0,PC,adventure~single-player~side-view
