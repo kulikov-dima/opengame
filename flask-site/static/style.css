@@ -28,7 +28,6 @@ fieldset {
     border-radius: 5px;
     color: white;
     font-weight: bold;
-
 }
 
 th {
@@ -50,4 +49,11 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background: #ecfaff;
+}
+
+.card {
+    background: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
 }

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Каталог — OpenGame{% endblock %}
+{% block content %}
+    {% include "partials/filters.html" %}
+    <h2>Каталог</h2>
+    <p>Найдено игр: {{ games | length }}</p>
+    {% for game in games %}
+        {% include "partials/game_card.html" %}
+    {% else %}
+        <p>Игры не найдены</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ game.name }} — OpenGame{% endblock %}
+{% block content %}
+    <h2>{{ game.name }}</h2>
+    <p>Год: {{ game.year or 'Не указан' }}</p>
+    <p>Рейтинг: {{ game.rating if game.rating else 'Нет оценки' }}</p>
+    <p>Платформы: {{ game.platforms | join(', ') or 'Не указаны' }}</p>
+    <p>Жанры: {{ game.tags | join(', ') or 'Не указаны' }}</p>
+    <p><a href="https://stopgame.ru{{ game.url }}">Страница на StopGame</a></p>
+    <p><a href="{{ url_for('index') }}">Вернуться в каталог</a></p>
+{% endblock %}

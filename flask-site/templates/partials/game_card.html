@@ -1,0 +1,6 @@
+<div class="card">
+    <h3><a href="{{ url_for('game', game_id=game.id) }}">{{ game.name }}</a></h3>
+    <p>Год: {{ game.year or 'Не указан' }}</p>
+    <p>Рейтинг: {{ game.rating if game.rating else 'Нет оценки' }}</p>
+    <p>Платформы: {{ game.platforms | join(', ') or 'Не указаны' }}</p>
+</div>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Таблица — OpenGame{% endblock %}
+{% block content %}
+    {% include "partials/filters.html" %}
+    <h2>Таблица</h2>
+    <p>Найдено игр: {{ games | length }}</p>
+    {% if games %}
+    <table>
+        <tr><th>№</th><th>Название</th><th>Рейтинг</th><th>Год</th><th>Платформы</th></tr>
+        {% for game in games %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td><a href="{{ url_for('game', game_id=game.id) }}">{{ game.name }}</a></td>
+            <td>{{ game.rating if game.rating else 'Нет оценки' }}</td>
+            <td>{{ game.year or 'Не указан' }}</td>
+            <td>{{ game.platforms | join(', ') or 'Не указаны' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>Игры не найдены</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,33 @@
+<h2>Фильтры</h2>
+<form action="{{ url_for(active) }}" method="get">
+    <p>
+        <label for="search">Название: </label>
+        <input class="search" placeholder="Введите название" id="search" type="text" name="search" size="30" value="{{ search }}">
+    </p>
+    <p>
+        <label for="platform">Выберите платформу: </label>
+        <select id="platform" name="platform">
+            <option value="">Любая</option>
+            {% for p in platforms %}
+                <option value="{{ p }}" {% if p == platform %}selected{% endif %}>{{ p }}</option>
+            {% endfor %}
+        </select>
+    </p>
+    <fieldset>
+        <legend>Жанр</legend>
+        {% for genre in genres %}
+            <label><input type="checkbox" name="genre" value="{{ genre }}" {% if genre in selected_genres %}checked{% endif %}> {{ genre }}</label>
+        {% endfor %}
+    </fieldset>
+    <p>
+        <label for="sort">Сортировка: </label>
+        <select id="sort" name="sort">
+            <option value="">Без сортировки</option>
+            <option value="name" {% if sort == 'name' %}selected{% endif %}>По названию</option>
+            <option value="year" {% if sort == 'year' %}selected{% endif %}>По году</option>
+            <option value="rating" {% if sort == 'rating' %}selected{% endif %}>По рейтингу</option>
+        </select>
+    </p>
+    <input class="submit" type="submit" value="Применить">
+    <a href="{{ url_for(active) }}">Сбросить фильтры</a>
+</form>
